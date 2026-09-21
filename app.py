@@ -139,12 +139,8 @@ COL_OVERTIME = 69  # BR - TOTAL OVERTIME
 COL_ABSENT   = 70  # BS - TOTAL ABSENT
 COL_REMARKS  = 71  # BT - REMARKS
 
-@st.cache_data
-def load_data():
-    return pd.read_excel(EXCEL_FILE, sheet_name=SHEET_NAME, header=None)
-
 try:
-    df = load_data()
+    df = pd.read_excel(EXCEL_FILE, sheet_name=SHEET_NAME, header=None)
 
     with st.form(key="search_form"):
         emp_id_input = st.text_input("File Number", placeholder="e.g., 220")
